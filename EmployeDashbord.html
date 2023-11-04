@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('background.jpg') ;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-container .btn-primary {
+            width: 100%;
+            background-color: #28a745;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .form-container .btn-primary:hover {
+            background-color: #218838;
+        }
+        .btn-third{
+            background-color: #000408;
+            border: none;
+            color:wheat
+        }
+        .btn-third:hover{
+            background-color: #121719;
+        }
+        .btn-four {
+            background-color: #007bff;
+            border: none;
+            color:wheat;
+            margin-left: 150px;
+            
+        }
+
+        .btn-four:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container form-container">
+        <h1>Employee Activities</h1>
+
+        <form action="emp.html" method="post">
+            <label for="employeeRegistration">Employee Registration</label>
+            <button type="submit" class="btn btn-primary">Open</button>
+        </form>
+
+        <form action="empTaskReport.html" method="post">
+            <label for="viewTaskReport">View Task Report</label>
+            <button type="submit" class="btn btn-primary">Open</button>
+            
+        </form>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <a href="javascript:history.back()" class="btn btn-third">Back</a>
+                </td>
+                <td></td> <td></td>
+                <td>
+                    <form action="home.html" method="post" >
+                        <button type="submit" class="btn btn-four">Log Out</button>
+                    </form>
+                
+                </td>
+        </tr>
+
+        </table>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

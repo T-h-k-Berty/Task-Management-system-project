@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Task Management System</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #000002;
+            font-family: times new roman bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 100px;
+            font-size: 50px;
+            text-shadow: 0 0 3px #11d25e, 0 0 5px #0808b8;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            border: none;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        button.login-button {
+            background-color: #28a745;
+        }
+
+        button.register-button {
+            background-color: #007bff;
+        }
+
+        button:hover {
+            background-color:#0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>EMPLOYEE TASK MANAGEMENT SYSTEM</h1>
+
+    <div class="button-container">
+
+        <table>
+            <tr>
+                <td>
+                    <form action="login.html" method="post">
+                        <button type="submit" class="login-button">Login</button>
+                    </form>
+                </td>
+
+                <td>
+                    <form action="register.html" method="post">
+                        <button type="submit" class="register-button">Register</button>
+                    </form>
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Task Report</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            background: url('background.jpg') ;
+            background-size: cover;
+            color: #0a0000;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            color: #ffffff;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        th {
+            background-color: #343a40;
+            
+        }
+
+        label {
+            color: #080000;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-third {
+            background-color: #000408;
+            border: none;
+            color: wheat;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left:800px;
+        }
+
+        .btn-third:hover {
+            background-color: #121719;
+        }
+
+        #EmpTask td {
+    color: #000000; 
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>EMPLOYEE TASK REPORT</h1>
+
+    <form id="taskForm">
+        <label for="Eidtask">Employee ID</label>
+        <input type="text" id="Eidtask" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <table id="EmpTask">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Task ID</th>
+            <th>Task Name</th>
+        </tr>
+        
+       
+        
+    </table>
+
+    <form>
+        <a href="javascript:history.back()" class="btn btn-third">Back</a>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#taskForm').submit(function(event) {
+                event.preventDefault();
+                var Eidtask = $('#Eidtask').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'EmpTaskReport2.php',
+                    data: {
+                        Eidtask: Eidtask
+                    },
+                    success: function(data) {
+                        $('#EmpTask').find('tr:gt(0)').remove(); // Remove existing rows except header
+                        $('#EmpTask').append(data); // Append new rows from PHP
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
